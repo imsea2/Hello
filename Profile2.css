@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Pretendard&display=swap');
+
+body {
+  margin: 0;
+  padding: 40px;
+  background-color: #f3f3f3;
+  font-family: 'Pretendard', sans-serif;
+}
+
+.card {
+  max-width: 360px;
+  background-color: #fff9e8;
+  margin: 0 auto;
+  padding: 32px 24px;
+  border-radius: 24px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.profile-img-wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+.emoji-bubble {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffe3e7;
+  border-radius: 40px;
+  padding: 8px 20px;
+  font-size: 20px;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 8px;      
+}
+
+.emoji-bubble span {
+  display: inline-block;
+}
+
+.emoji-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 12px 12px 0;
+  border-style: solid;
+  border-color: #ffe3e7 transparent transparent transparent;
+}
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.name {
+  margin-top: 16px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.title {
+  color: #999;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+.artworks {
+  background: #fff;
+  padding: 20px;
+  margin-top: 24px;
+  border-radius: 16px;
+  text-align: left;
+}
+
+.artworks h3 {
+  margin-bottom: 16px;
+  color: #ff5a5f;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* 슬라이드 영역 */
+.art-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 12px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;
+}
+
+.art-scroll img {
+  flex: 0 0 auto;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 12px;
+  scroll-snap-align: start;
+}
