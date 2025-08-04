@@ -1,45 +1,99 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>프로필 카드</title>
-
-  <!-- Pretendard 폰트 적용 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
-
-  <!-- 외부 CSS 연결 -->
-  <link rel="stylesheet" href="Profile.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="Profile.css">
+  <title>Profile & Artworks</title>
 </head>
-
 <body>
   <div class="container">
-    <h1>My Profile</h1>
-    <img src="https://i.pinimg.com/originals/50/98/89/509889433b1af831c21c49757917a576.gif" alt="Profile Image" class="profileImg">
-    <h2>전바다 🌊</h2>
-    <p>Product Designer.</p>
-    
-    <div class="contact">
-      <p><strong>Contact me at:</strong></p>
-      <a href="mailto:imseaofsea@gmail.com">imseaofsea@gmail.com</a>
-      <a href="tel:+821090853271">+821090853271</a>
-    </div>
+    <!-- Sidebar: Profile -->
+    <aside class="sidebar">
+      <div class="profile">
+        <div class="chat-bubble">🐹🐰🐶🐱🍀</div>
+        <div class="avatar">
+          <img src="Img/ZZ.png" alt="전바다 프로필">
+        </div>
+        <h1 class="name">전바다 <span class="wave">🌊</span></h1>
+        <p class="role">Product Designer</p>
+        <div class="contact">
+          <div class="contact-item"><span class="icon">📞</span>010-9085-3271</div>
+          <div class="contact-item"><span class="icon">✉️</span>imseaofsea@gmail.com</div>
+        </div>
+      </div>
+    </aside>
 
-    <div class="formContainer">
-      <h3>Contact Me</h3>
-      <form action="/" method="POST">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required>
+    <!-- Main: Artworks + Bottom Row -->
+    <main class="content">
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
+      <!-- 첫 번째 Artworks: 16:9 비율 -->
+      <section class="artworks artworks--wide">
+        <div class="artworks-header">
+          <h2>Artworks</h2>
+          <a href="#">전체보기</a>
+        </div>
+        <div class="artworks-list">
+          <div class="artwork-item"><img src="Img/MySpot.png" alt="Artwork 5"></div>
+          <div class="artwork-item"><img src="Img/MySpot.png" alt="Artwork 6"></div>
+          <div class="artwork-item"><img src="Img/MySpot.png" alt="Artwork 7"></div>
+          <div class="artwork-item"><img src="Img/MySpot.png" alt="Artwork 8"></div>
+          <div class="artwork-item"><img src="Img/MySpot.png" alt="Artwork 9"></div>
+        </div>
+      </section>
 
-        <label for="message">Message</label>
-        <input type="text" id="message" name="message" required>
+      <!-- 두 번째 Artworks: Compact -->
+      <section class="artworks artworks--compact">
+        <div class="artworks-header">
+          <h2>I Like This</h2>
+          <a href="#">전체보기</a>
+        </div>
+        <div class="artworks-list">
+          <div class="artwork-item"><img src="Img/I'm sad, but I'm smiling like this..JPG" alt="Artwork 1"></div>
+          <div class="artwork-item"><img src="Img/ZZ.png" alt="Artwork 2"></div>
+          <div class="artwork-item"><img src="Img/Rabbit2.JPG" alt="Artwork 3"></div>
+          <div class="artwork-item"><img src="Img/Rabbit3.JPG" alt="Artwork 4"></div>
+          <div class="artwork-item"><img src="Img/RabbitKick.JPG" alt="Artwork 5"></div>
+          <div class="artwork-item"><img src="Img/Rabbit1.JPG" alt="Artwork 6"></div>
+        </div>
+      </section>
 
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-  </div>
+      <!-- 소셜 + 컨택 2열 배치 -->
+      <div class="bottom-row">
+
+        <!-- 왼쪽: Social Section -->
+        <section class="social-section">
+          <div class="qr-code">
+            <img src="Img/Insta.jpg" alt="Instagram QR">
+          </div>
+          <div class="social-handle">@im_sea__</div>
+          <div class="github-icon">
+            <img src="Img/github.png" alt="GitHub">
+          </div>
+          <div class="social-link">https://github.com/imsea2/Hello</div>
+        </section>
+
+        <!-- 오른쪽: Contact Form -->
+        <section class="contact-form">
+          <h2 class="contact-form__title">Contact Me</h2>
+          <form>
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Email">
+
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Name">
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Message"></textarea>
+
+            <button type="submit">Send</button>
+          </form>
+        </section>
+
+      </div> <!-- .bottom-row -->
+
+    </main>
+  </div> <!-- .container -->
 </body>
 </html>

@@ -1,107 +1,242 @@
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
 body {
-  font-family: 'Pretendard', sans-serif;
-  background-color: #ffeaea;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 20px;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #FFFCE6;
 }
 
 .container {
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  padding: 30px;
-  max-width: 420px;
-  width: 100%;
-  text-align: center;
+  display: flex;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #FFFCE6;
+  border-radius: 20px;
+  gap: 24px;
 }
 
-h1 {
-  font-size: 24px;
-  color: #111;
-  margin-bottom: 15px;
+/* Sidebar */
+.sidebar {
+  flex: 0 0 320px;
 }
 
-.profileImg {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 15px;
-  border: 4px solid #ddd;
-}
-
-h2 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-p {
-  font-size: 14px;
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-.contact {
-  margin-bottom: 20px;
-}
-
-.contact a {
-  display: block;
-  color: #1e3a8a;
-  text-decoration: none;
-  font-size: 14px;
-  margin-top: 4px;
-}
-
-.formContainer {
-  text-align: left;
-}
-
-.formContainer h3 {
-  margin-bottom: 10px;
-  font-size: 16px;
-}
-
-form {
+.profile {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  background: #FFF;
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  height: 560px;
+}
+.chat-bubble {
+  display: inline-block;
+  background: #FFEAEA;
+  padding: 8px 16px;
+  border-radius: 40px;
+  margin-bottom: 40px;
+  font-size: 20px;
+}
+.avatar img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+.name {
+  margin-bottom: 6px;
+  font-size: 24px;
+  font-weight: 700;
+}
+.wave {
+  font-size: 24px;
+}
+.role {
+  margin: 4px 0 40px;
+  color: #AAA;
+  font-size: 16px;
+}
+.contact {
+  text-align: left;
+  font-size: 16px;
+  margin-left: 16px;
+}
+.contact-item {
+  margin: 8px 0;
+}
+.contact-item .icon {
+  margin-right: 8px;
 }
 
-label {
-  font-size: 13px;
-  margin-bottom: 2px;
+/* Content */
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
 }
 
-input {
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+/* Artworks 공통 스타일 */
+.artworks {
+  width: 90%;
+  box-sizing: border-box;
+  background: #FFF;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.artworks-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.artworks-header h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #ff8297;
+}
+.artworks-header a {
   font-size: 14px;
+  color: #AAA;
+  text-decoration: none;
+}
+.artworks-list {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+}
+.artworks-list::-webkit-scrollbar {
+  display: none;
+}
+.artworks-list {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.artwork-item {
+  flex: 0 0 auto;
+  width: 200px;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  overflow: hidden;
+  scroll-snap-align: start;
+  background: #F5F5F5;
+}
+.artwork-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-button {
-  background-color: #ffacac;
-  color: white;
+/* 첫 번째 섹션: 16:9 비율로 크게 */
+.artworks--wide .artwork-item {
+  width: 430px;
+  aspect-ratio: 16 / 9;
+}
+
+/* 두 번째 섹션: Compact */
+.artworks--compact .artwork-item {
+  width: 150px;
+}
+.artworks--compact .artworks-header h2 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+/* Bottom Row: 소셜 + 컨택 2열 */
+.bottom-row {
+  display: flex;
+  gap: 24px;
+  width: 90%;
+  margin: 0 auto 40px;
+  box-sizing: border-box;
+}
+
+/* 왼쪽: Social Section */
+.social-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 320px;
+  background: #FFF;
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.social-section .qr-code img {
+  width: 150px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+}
+.social-section .social-handle,
+.social-section .social-link {
+  margin-top: 16px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #555;
+  word-break: break-all;
+}
+.social-section .github-icon img {
+  width: 150px;
+  margin-top: 24px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+}
+
+/* 오른쪽: Contact Form */
+.contact-form {
+  flex: 1;
+  background: #FFF;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.contact-form__title {
+  margin: 0 0 24px;
+  font-size: 18px;
+  color: #ff8297;
+  font-weight: 600;
+}
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.contact-form label {
+  color: #ffa8b7;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: -10px;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 16px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+.contact-form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+.contact-form button {
+  width: 100%;
+  padding: 16px;
+  font-size: 18px;
+  color: #fff;
+  background: #ff8297;
   border: none;
-  padding: 10px;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
-  font-size: 14px;
-  margin-top: 8px;
-}
-
-button:hover {
-  background-color: #ff6969;
 }
