@@ -1,36 +1,154 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>전바다 프로필 카드</title>
-  <link rel="stylesheet" href="Profile3.css" />
-  <!-- Pretendard 폰트 적용 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="Profile.css" />
+  <title>Profile & Artworks</title>
 </head>
+
 <body>
-  <div class="profile-card">
-    <div class="emoji-bubble">🐹🐰🐶🐱🍀</div>
-    
-    <img class="profile-img" src="https://i.pinimg.com/originals/50/98/89/509889433b1af831c21c49757917a576.gif" alt="전바다 프로필 이미지" />
+  <div class="container">
 
-    <h1 class="name">전바다🌊</h1>
-    <p class="job">Product Designer</p>
-
-    <div class="contact">
-      <p><img src="https://img.icons8.com/ios-filled/50/phone.png"/> 01012341234</p>
-      <p><img src="https://img.icons8.com/ios-filled/50/email.png"/> imseaofsea@gmail.com</p>
-      <p><img src="https://img.icons8.com/ios-filled/50/instagram-new.png"/> @imsea_100</p>
+    <!-- ① 탭 버튼: 최상단에 고정 -->
+    <div class="tab-buttons">
+      <button class="tab-btn active" onclick="showTab('about', event)">About Me</button>
+      <button class="tab-btn"         onclick="showTab('works', event)">Works</button>
     </div>
 
-    <div class="artworks">
-      <h2>Artworks</h2>
-      <div class="art-images">
-        <img src="https://media.bunjang.co.kr/product/174437204_1_1694736044_w%7Bres%7D.jpg" alt="아트웍1">
-        <img src="https://media.bunjang.co.kr/product/174437204_1_1694736044_w%7Bres%7D.jpg" alt="아트웍2">
-        <img src="https://media.bunjang.co.kr/product/174437204_1_1694736044_w%7Bres%7D.jpg" alt="아트웍3">
+    <!-- ② 좌우 컬럼 래퍼 -->
+    <div class="main">
+      <!-- 왼쪽: 프로필 카드 -->
+      <aside class="sidebar left-col">
+        <div class="profile">
+          <div class="chat-bubble">🐹🐰🐶🐱🍀</div>
+          <div class="avatar">
+            <img src="Img/ZZ.png" alt="전바다 프로필" />
+          </div>
+          <h1 class="name">전바다 <span class="wave">🌊</span></h1>
+          <p class="role">Product Designer</p>
+          <div class="contact">
+            <div class="contact-item"><span class="icon">📞</span>010-9085-3271</div>
+            <div class="contact-item"><span class="icon">✉️</span>imseaofsea@gmail.com</div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- 오른쪽: 탭 컨텐츠 -->
+      <div class="tab-contents">
+        <!-- About Me -->
+        <div id="about" class="tab-content active">
+          <main class="content">
+            <!-- 첫 번째 Artworks: 16:9 -->
+            <section class="artworks artworks--wide">
+              <div class="artworks-header">
+                <h2>Works</h2>
+                <a href="#">전체보기</a>
+              </div>
+              <div class="artworks-list">
+                <div class="artwork-item"><img src="Img/MySpot.png" alt="Artwork 1"></div>
+                <div class="artwork-item"><img src="Img/MySpot.png" alt="Artwork 2"></div>
+                <div class="artwork-item"><img src="Img/MySpot.png" alt="Artwork 3"></div>
+                <div class="artwork-item"><img src="Img/MySpot.png" alt="Artwork 4"></div>
+                <div class="artwork-item"><img src="Img/MySpot.png" alt="Artwork 5"></div>
+              </div>
+            </section>
+            <!-- 두 번째 Artworks: Compact -->
+            <section class="artworks artworks--compact">
+              <div class="artworks-header">
+                <h2>I Like This</h2>
+                <a href="#">전체보기</a>
+              </div>
+              <div class="artworks-list">
+                <div class="artwork-item"><img src="Img/Rabbit1.JPG" alt="Artwork 1"></div>
+                <div class="artwork-item"><img src="Img/ZZ.png" alt="Artwork 2"></div>
+                <div class="artwork-item"><img src="Img/Rabbit2.JPG" alt="Artwork 3"></div>
+                <div class="artwork-item"><img src="Img/Rabbit3.JPG" alt="Artwork 4"></div>
+                <div class="artwork-item"><img src="Img/RabbitKick.JPG" alt="Artwork 5"></div>
+                <div class="artwork-item"><img src="Img/Rabbit1.JPG" alt="Artwork 6"></div>
+              </div>
+            </section>
+            <!-- 소셜 + 컨택 2열 -->
+            <div class="bottom-row">
+              <section class="social-section">
+                <div class="qr-code">
+                  <a href="https://www.instagram.com/im_sea__" target="_blank">
+                    <img src="Img/Insta.jpg" alt="Instagram QR">
+                  </a>
+                </div>
+                <div class="social-handle">@im_sea__</div>
+                <div class="github-icon">
+                  <a href="https://github.com/imsea2/Hello" target="_blank">
+                    <img src="Img/github.png" alt="GitHub">
+                  </a>
+                </div>
+                <div class="social-link">https://github.com/imsea2/Hello</div>
+              </section>
+              <section class="contact-form">
+                <h2 class="contact-form__title">Contact Me</h2>
+                <form>
+                  <label for="email">Your Email</label>
+                  <input type="email" id="email" name="email" placeholder="Email">
+                  <label for="name">Your Name</label>
+                  <input type="text" id="name" name="name" placeholder="Name">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" placeholder="Message"></textarea>
+                  <button type="button" id="sendEmail">Send</button>
+                </form>
+              </section>
+            </div>
+          </main>
+        </div>
+
+        <!-- Works -->
+        <div id="works" class="tab-content">
+          <div class="works-grid">
+            <!-- 여기에 work-card 6개 반복 -->
+            <div class="work-card">
+              <img src="Img/Project1.jpg" alt="Project 1">
+              <div class="work-info">
+                <h3>Project Title</h3>
+                <p>프로젝트 설명</p>
+              </div>
+            </div>
+            <!-- ... (총 6개) -->
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
+    </div><!-- .main -->
+
+  </div><!-- .container -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    function showTab(tabName, e) {
+      // 탭 버튼 토글
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      e.currentTarget.classList.add('active');
+      // 탭 컨텐츠 토글
+      document.querySelectorAll('.tab-content').forEach(tc => {
+        tc.classList.toggle('active', tc.id === tabName);
+      });
+      // Works 탭일 때만 프로필 숨기기
+      document.querySelector('.left-col').style.display = tabName === 'works' ? 'none' : 'flex';
+    }
+
+    // EmailJS (기존 로직)
+    const form = document.querySelector('.contact-form form');
+    document.querySelector('#sendEmail')?.addEventListener('click', () => {
+      emailjs.sendForm(
+        'service_s3vnolg',
+        'template_jgmvjkg',
+        form,
+        { publicKey: 'ZLjLL4Wx6EK9hKMu8' }
+      ).then(() => {
+        alert(`${form.name.value}님, 메일 전송 성공! 😊`);
+      }).catch(() => {
+        alert(`${form.name.value}님, 메일 전송 실패… 😢`);
+      });
+    });
+  </script>
 </body>
+
 </html>

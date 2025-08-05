@@ -1,134 +1,189 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="Profile.css">
-    <title>Profile & Artworks</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="Profile.css">
+  <title>Profile & Artworks</title>
 </head>
 
 <body>
-    <div class="container">
-        <!-- Sidebar: Profile -->
-        <aside class="sidebar">
-            <div class="profile">
-                <div class="chat-bubble">🐹🐰🐶🐱🍀</div>
-                <div class="avatar">
-                    <img src="Img/ZZ.png" alt="전바다 프로필">
-                </div>
-                <h1 class="name">전바다 <span class="wave">🌊</span></h1>
-                <p class="role">Product Designer</p>
-                <div class="contact">
-                    <div class="contact-item"><span class="icon">📞</span>010-9085-3271</div>
-                    <div class="contact-item"><span class="icon">✉️</span>imseaofsea@gmail.com</div>
-                </div>
-            </div>
-        </aside>
+  <div class="container">
+    <!-- 왼쪽: 탭버튼 + 프로필 -->
+    <div class="left-col">
+      <div class="tab-buttons">
+        <button class="tab-btn active" onclick="showTab('about', event)">About Me</button>
+        <button class="tab-btn" onclick="showTab('works', event)">Works</button>
+      </div>
+      <aside class="sidebar">
+        <div class="profile">
+          <div class="chat-bubble">🐹🐰🐶🐱🍀</div>
+          <div class="avatar">
+            <img src="Img/ZZ.png" alt="전바다 프로필">
+          </div>
+          <h1 class="name">전바다 <span class="wave">🌊</span></h1>
+          <p class="role">Product Designer</p>
+          <div class="contact">
+            <div class="contact-item"><span class="icon">📞</span>010-9085-3271</div>
+            <div class="contact-item"><span class="icon">✉️</span>imseaofsea@gmail.com</div>
+          </div>
+        </div>
+      </aside>
+    </div>
 
-        <!-- Main: Artworks + Bottom Row -->
+    <!-- 오른쪽: 탭 내용 (About/Works) -->
+    <div class="tab-contents">
+      <!-- About Me 탭 내용 -->
+      <div id="about" class="tab-content active">
         <main class="content">
-
-            <!-- 첫 번째 Artworks: 16:9 비율 -->
-            <section class="artworks artworks--wide">
-                <div class="artworks-header">
-                    <h2>Artworks</h2>
-                    <a href="#">전체보기</a>
-                </div>
-                <div class="artworks-list">
-                    <div class="artwork-item"><img src="Img/MySpot.png" alt="Artwork 1"></div>
-                    <div class="artwork-item"><img src="Img/MySpot.png" alt="Artwork 2"></div>
-                    <div class="artwork-item"><img src="Img/MySpot.png" alt="Artwork 3"></div>
-                    <div class="artwork-item"><img src="Img/MySpot.png" alt="Artwork 4"></div>
-                    <div class="artwork-item"><img src="Img/MySpot.png" alt="Artwork 5"></div>
-                </div>
+          <!-- 첫 번째 Artworks: 16:9 비율 -->
+          <section class="artworks artworks--wide">
+            <div class="artworks-header">
+              <h2>Works</h2>
+              <a href="#">전체보기</a>
+            </div>
+            <div class="artworks-list">
+              <div class="artwork-item"><img src="Img/MySpot.png" alt="Artwork 1"></div>
+              <div class="artwork-item"><img src="Img/MySpot.png" alt="Artwork 2"></div>
+              <div class="artwork-item"><img src="Img/MySpot.png" alt="Artwork 3"></div>
+              <div class="artwork-item"><img src="Img/MySpot.png" alt="Artwork 4"></div>
+              <div class="artwork-item"><img src="Img/MySpot.png" alt="Artwork 5"></div>
+            </div>
+          </section>
+          <!-- 두 번째 Artworks: Compact -->
+          <section class="artworks artworks--compact">
+            <div class="artworks-header">
+              <h2>I Like This</h2>
+              <a href="#">전체보기</a>
+            </div>
+            <div class="artworks-list">
+              <div class="artwork-item"><img src="Img/I'm sad, but I'm smiling like this..JPG" alt="Artwork 1"></div>
+              <div class="artwork-item"><img src="Img/ZZ.png" alt="Artwork 2"></div>
+              <div class="artwork-item"><img src="Img/Rabbit2.JPG" alt="Artwork 3"></div>
+              <div class="artwork-item"><img src="Img/Rabbit3.JPG" alt="Artwork 4"></div>
+              <div class="artwork-item"><img src="Img/RabbitKick.JPG" alt="Artwork 5"></div>
+              <div class="artwork-item"><img src="Img/Rabbit1.JPG" alt="Artwork 6"></div>
+            </div>
+          </section>
+          <!-- 소셜 + 컨택 2열 배치 -->
+          <div class="bottom-row">
+            <!-- 왼쪽: Social Section -->
+            <section class="social-section">
+              <div class="qr-code">
+                <a href="https://www.instagram.com/im_sea__" target="_blank">
+                  <img src="Img/Insta.jpg" alt="Instagram QR">
+                </a>
+              </div>
+              <div class="social-handle">@im_sea__</div>
+              <div class="github-icon">
+                <a href="https://github.com/imsea2/Hello" target="_blank">
+                  <img src="Img/github.png" alt="GitHub">
+                </a>
+              </div>
+              <div class="social-link">https://github.com/imsea2/Hello</div>
             </section>
-
-            <!-- 두 번째 Artworks: Compact -->
-            <section class="artworks artworks--compact">
-                <div class="artworks-header">
-                    <h2>I Like This</h2>
-                    <a href="#">전체보기</a>
-                </div>
-                <div class="artworks-list">
-                    <div class="artwork-item"><img src="Img/I'm sad, but I'm smiling like this..JPG" alt="Artwork 1">
-                    </div>
-                    <div class="artwork-item"><img src="Img/ZZ.png" alt="Artwork 2"></div>
-                    <div class="artwork-item"><img src="Img/Rabbit2.JPG" alt="Artwork 3"></div>
-                    <div class="artwork-item"><img src="Img/Rabbit3.JPG" alt="Artwork 4"></div>
-                    <div class="artwork-item"><img src="Img/RabbitKick.JPG" alt="Artwork 5"></div>
-                    <div class="artwork-item"><img src="Img/Rabbit1.JPG" alt="Artwork 6"></div>
-                </div>
+            <!-- 오른쪽: Contact Form -->
+            <section class="contact-form">
+              <h2 class="contact-form__title">Contact Me</h2>
+              <form>
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="Email">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Name">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Message"></textarea>
+                <button type="button" id="sendEmail">Send</button>
+              </form>
             </section>
-
-            <!-- 소셜 + 컨택 2열 배치 -->
-            <div class="bottom-row">
-
-                <!-- 왼쪽: Social Section -->
-                <section class="social-section">
-                    <div class="qr-code">
-                        <a href="https://www.instagram.com/im_sea__" target="_blank">
-                            <img src="Img/Insta.jpg" alt="Instagram QR">
-                        </a>
-                    </div>
-                    <div class="social-handle">@im_sea__</div>
-                    <div class="github-icon">
-                        <a href="https://github.com/imsea2" target="_blank">
-                            <img src="Img/github.png" alt="GitHub">
-                        </a>
-                    </div>
-                    <div class="social-link">https://github.com/imsea2</div>
-                </section>
-
-                <!-- 오른쪽: Contact Form -->
-                <section class="contact-form">
-                    <h2 class="contact-form__title">Contact Me</h2>
-                    <form>
-                        <label for="email">Your Email</label>
-                        <input type="email" id="email" name="email" placeholder="Email">
-
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" name="name" placeholder="Name">
-
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Message"></textarea>
-
-                        <button type="button" id="sendEmail">Send</button>
-                    </form>
-                </section>
-
-            </div> <!-- .bottom-row -->
-
+          </div>
         </main>
-    </div> <!-- .container -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script>
-        const form = document.querySelector('form');
-        const submitButton = document.querySelector('#sendEmail');
+      </div>
+      <!-- Works 탭 내용 -->
+      <div id="works" class="tab-content">
+        <div class="works-grid">
+          <!-- 카드 1~6 -->
+          <div class="work-card">
+            <img src="Img/I'm sad, but I'm smiling like this..JPG" alt="Project 1">
+            <div class="work-info">
+              <h3>Project Title</h3>
+              <p>I'm sad, but I'm smiling like this.</p>
+            </div>
+          </div>
+          <div class="work-card">
+            <img src="Img/I'm sad, but I'm smiling like this..JPG" alt="Project 2">
+            <div class="work-info">
+              <h3>Project Title</h3>
+              <p>I'm sad, but I'm smiling like this.</p>
+            </div>
+          </div>
+          <div class="work-card">
+            <img src="Img/I'm sad, but I'm smiling like this..JPG" alt="Project 3">
+            <div class="work-info">
+              <h3>Project Title</h3>
+              <p>I'm sad, but I'm smiling like this.</p>
+            </div>
+          </div>
+          <div class="work-card">
+            <img src="Img/I'm sad, but I'm smiling like this..JPG" alt="Project 4">
+            <div class="work-info">
+              <h3>Project Title</h3>
+              <p>I'm sad, but I'm smiling like this.</p>
+            </div>
+          </div>
+          <div class="work-card">
+            <img src="Img/I'm sad, but I'm smiling like this..JPG" alt="Project 5">
+            <div class="work-info">
+              <h3>Project Title</h3>
+              <p>I'm sad, but I'm smiling like this.</p>
+            </div>
+          </div>
+          <div class="work-card">
+            <img src="Img/I'm sad, but I'm smiling like this..JPG" alt="Project 6">
+            <div class="work-info">
+              <h3>Project Title</h3>
+              <p>I'm sad, but I'm smiling like this.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- .tab-contents -->
+  </div><!-- .container -->
 
-        const sendEmail = (e) => {
-            // e.preventDefault(); // 폼 제출 방지
+  <!-- EmailJS + 탭 스크립트 -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    // 탭 동작 (event 인자 꼭 넘겨주기!)
+    function showTab(tabName, e) {
+      document.querySelectorAll('.tab-content').forEach(function (tab) {
+        tab.classList.remove('active');
+      });
+      document.querySelectorAll('.tab-btn').forEach(function (btn) {
+        btn.classList.remove('active');
+      });
+      document.getElementById(tabName).classList.add('active');
+      e.target.classList.add('active');
+    }
 
-
-            emailjs
-                .sendForm('service_s3vnolg', 'template_jgmvjkg', form, {
-                    publicKey: 'ZLjLL4Wx6EK9hKMu8',
-                })
-                .then(
-                    () => {
-                        alert(`${form.name.value}님, 메일 전송에 성공했습니다 :)`);
-                    },
-                    (error) => {
-
-                        alert(`${form.name.value}님, 메일 전송에 실패했습니다 :(`);
-                    },
-                );
-        };
-
-        // 버튼 클릭 시 sendEmail 함수 호출
-        submitButton.addEventListener('click', sendEmail);
-    </script>
+    // EmailJS
+    const form = document.querySelector('.contact-form form');
+    const submitButton = document.querySelector('#sendEmail');
+    if (submitButton) {
+      submitButton.addEventListener('click', function (e) {
+        emailjs
+          .sendForm('service_s3vnolg', 'template_jgmvjkg', form, {
+            publicKey: 'ZLjLL4Wx6EK9hKMu8',
+          })
+          .then(
+            () => {
+              alert(`${form.name.value}님, 메일 전송에 성공했습니다 :)`);
+            },
+            (error) => {
+              alert(`${form.name.value}님, 메일 전송에 실패했습니다 :(`);
+            }
+          );
+      });
+    }
+  </script>
 </body>
-
 </html>
