@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   margin: 0;
   padding: 0;
@@ -83,7 +84,7 @@ body {
 
 /* Artworks 공통 스타일 */
 .artworks {
-  width: 90%;
+  width: 100%;
   box-sizing: border-box;
   background: #FFF;
   border-radius: 16px;
@@ -135,7 +136,7 @@ body {
   object-fit: cover;
 }
 
-/* 첫 번째 섹션: 16:9 비율로 크게 */
+/* 첫 번째 섹션: 16:9 */
 .artworks--wide .artwork-item {
   width: 430px;
   aspect-ratio: 16 / 9;
@@ -154,7 +155,7 @@ body {
 .bottom-row {
   display: flex;
   gap: 24px;
-  width: 90%;
+  width: 100%;
   margin: 0 auto 40px;
   box-sizing: border-box;
 }
