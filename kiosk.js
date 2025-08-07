@@ -18,6 +18,8 @@ menu.addEventListener("click", (event) => {
   const name  = button.getAttribute("data-name");
   const price = Number(button.getAttribute("data-price"));
 
+  console.log(`장바구니에 ${name} 추가! (가격 ${price}원)`); 
+
   cart[name]
     ? cart[name].count++
     : (cart[name] = { price, count: 1 });
@@ -58,14 +60,17 @@ function updateCart() {
       display:flex; align-items:center; justify-content:center;
     `;
     btnMinus.addEventListener("click", (e) => {
-      e.stopPropagation();
-      if (cart[name].count > 1) cart[name].count--;
-      else delete cart[name];
+        e.stopPropagation();
+      if (cart[name].count > 1) {cart[name].count--;
+       console.log(`${name} 수량이 ${cart[name].count}로 감소했어요`);}
+      else {delete cart[name];
+       console.log(`${name} 항목이 장바구니에서 삭제되었어요`);}
       updateCart();
     });
 
     const info = document.createElement("span");
     info.textContent = `${name} x${count} (${(price * count).toLocaleString()}원)`;
+    info.style.whitespace = "nowrap";
 
     const btnPlus = document.createElement("button");
     btnPlus.textContent = "+";
@@ -76,6 +81,7 @@ function updateCart() {
     btnPlus.addEventListener("click", (e) => {
       e.stopPropagation();
       cart[name].count++;
+         console.log(`${name} 수량이 ${cart[name].count}로 증가했어요`);
       updateCart();
     });
 
