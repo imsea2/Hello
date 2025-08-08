@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiosk Order System(ver.Easy)</title>
+    <link rel="stylesheet" href="kiosk.css">
+</head>
+
+<body>
+    <!-- 최상위 컨테이너 -->
+    <div class="container">
+        <!-- 메뉴 영역 -->
+        <div id="menu">
+            <h1>🐰 Hello! It's Sylvanian Families Shop 🐰</h1>
+
+            <!-- 탭버튼 -->
+            <div class="tab-buttons" role="tablist" aria-label="상품 카테고리">
+                <button class="tab-btn active" data-tab-target="single" role="tab" aria-selected="true">단품</button>
+                <button class="tab-btn" data-tab-target="limited" role="tab" aria-selected="false">한정판</button>
+                <button class="tab-btn" data-tab-target="set" role="tab" aria-selected="false">세트</button>
+            </div>
+
+            <!-- 메뉴 버튼 묶음 -->
+            <div class="tab-panel active" id="tab-single" role="tabpanel">
+                <div class="menu-items">
+                    <button type="button" data-name="뮤지션 실바니안" data-price="13000" class="item music">
+                        <img src="../Img/music.jpg.avif" alt="뮤지션 실바니안" />
+                        🎻 뮤지션 실바니안<br />13,000원
+                    </button>
+
+                    <button type="button" data-name="여행자 실바니안" data-price="11000" class="item travel">
+                        <img src="../Img/travel.jpg.avif" alt="여행자 실바니안" />
+                        ✈️ 여행자 실바니안<br />11,000원
+                    </button>
+
+                    <button type="button" data-name="양 실바니안" data-price="15000" class="item sheep">
+                        <img src="../Img/sheep.jpg" alt="양 실바니안" />
+                        🐑 양 실바니안<br />15,000원
+                    </button>
+                </div>
+            </div>
+
+            <div class="tab-panel" id="tab-limited" role="tabpanel" hidden>
+                <div class="menu-items">
+                    <button type="button" data-name="(한정판) 카라멜 실바니안" data-price="22000" class="item caramel">
+                        <img src="../Img/caramel.jpg" alt="(한정판) 카라멜 실바니안" />
+                        (한정판) 🍮 카라멜 실바니안<br />22,000원
+                    </button>
+
+                    <button type="button" data-name="(한정판) 유령 실바니안" data-price="25000" class="item ghost">
+                        <img src="../Img/ghostcat.jpg.webp" alt="(한정판) 유령 실바니안" />
+                        (한정판) 👻 유령 실바니안<br />25,000원
+                    </button>
+                </div>
+            </div>
+
+            <div class="tab-panel" id="tab-set" role="tabpanel" hidden>
+                <div class="menu-items">
+                    <button type="button" data-name="피크닉 세트" data-price="40700" class="item picnic">
+                        <img src="../Img/picnic.jpg" alt="피크닉 세트" />
+                        🧺 피크닉 세트<br />40,700원
+                    </button>
+
+                    <button type="button" data-name="유치원 세트" data-price="50700" class="item kindergarten">
+                        <img src="../Img/kindergarten.jpg" alt="유치원 세트" />
+                        🚌 유치원 세트<br />50,700원
+                    </button>
+
+                    <button type="button" data-name="패밀리 오후 세트" data-price="51700" class="item lunch">
+                        <img src="../Img/lunch.jpg" alt="패밀리 오후 세트" />
+                        🏠 패밀리 오후 세트<br />51,700원
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <h3>💵 결제하기</h3>
+        <div id="cart"></div>
+        <p>Total: <span id="total">0</span>원</p>
+
+        <div class="btn-group">
+            <button id="clearBtn" class="btn gray">모두삭제</button>
+            <button id="checkoutBtn" class="btn pink">결제하기</button>
+        </div>
+    </div>
+    </div>
+
+    <!-- 스크립트는 body 끝 직전에 로드 -->
+    <script src="kiosk.js"></script>
+    <script src="tab.js"></script>
+</body>
+
+</html>

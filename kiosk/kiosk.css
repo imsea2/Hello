@@ -1,0 +1,166 @@
+/* 배경 및 기본 폰트 */
+body {
+  background-image: url('../Img/back2.jpg.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 40px 0;
+  font-family: '맑은 고딕', sans-serif;
+}
+
+/* 컨테이너 */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+}
+
+/* 탭 버튼 줄 */
+.tab-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 16px 0 24px;
+}
+
+/* 기본 상태 */
+.tab-btn {
+  padding: 8px 14px;
+  font-size: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f7f7f7;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* 기본 상태 hover */
+.tab-btn:hover {
+  background-color: #ffc6c6;
+  border-color: #bbb;
+}
+
+/* 선택(active) 상태 */
+.tab-btn.active {
+  background-color: #ffebee;    /* 연핑크 */
+  border-color: #f48fb1;        /* 진한 핑크 테두리 */
+  color: #ff6363;               /* 글자색 진핑크 */
+  font-weight: bold;
+
+}
+
+
+/* 메뉴 영역 */
+#menu {
+  text-align: center;
+}
+
+/* 메뉴 아이템 묶음 */
+.menu-items {
+  border: 0.5px dashed #e4e4e4;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  width: 700px;
+  margin: 0 auto;
+  gap: 12px;
+  background-color: #fafafa;
+  border-radius: 8px;
+}
+
+/* 공통 버튼 스타일 */
+.item {
+  border: none;
+  box-shadow: none;
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* 개별 버튼 색상 */
+.item.music {
+  background-color: #ffe9e9;
+}
+
+.item.travel {
+  background-color: #ffe9e9;
+}
+
+.item.sheep {
+  background-color: #ffe9e9;
+}
+
+.item.caramel {
+  background-color: #fff2db;
+}
+
+.item.ghost {
+  background-color: #fff2db;
+}
+
+.item.picnic {
+  background-color: #d3eaff;
+}
+
+.item.kindergarten {
+  background-color: #d3eaff;
+}
+
+.item.lunch {
+  background-color: #d3eaff;
+}
+
+/* 상품 이미지 */
+.item img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 6px;
+}
+
+/* 결제 영역 */
+#cart {
+  text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+/* 버튼 그룹 */
+.btn-group {
+  text-align: center;
+  margin: 16px 0;
+}
+
+.btn {
+  padding: 8px 16px;
+  font-size: 16px;
+  color: #fff;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn.gray {
+  background-color: #cdcdcd;
+}
+
+.btn.pink {
+  background-color: #ff9d9d;
+}

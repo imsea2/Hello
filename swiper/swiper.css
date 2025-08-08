@@ -1,0 +1,110 @@
+/* 배경/폰트 */
+body {
+  background-image: url('../Img/back2.jpg.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 40px 0;
+  font-family: '맑은 고딕', sans-serif;
+}
+
+/* 카드/컨테이너 */
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  padding: 32px 24px 40px;
+}
+
+/* 제목 */
+#menu h1 {
+  text-align: center;
+  margin: 0 0 8px;
+}
+
+/* 탭 버튼 */
+.tab-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 12px 0 16px;
+}
+.tab-btn {
+  padding: 8px 14px;
+  font-size: 14px;
+  border: 1px solid #e6e6e6;
+  border-radius: 999px;
+  background: #fff;
+  cursor: pointer;
+}
+.tab-btn.active {
+  background: #ffebee;
+  border-color: #ffcdd2;
+  color: #ff6363;
+  font-weight: 700;
+}
+.hidden { display: none; }
+
+/* Swiper 영역 */
+.swiper {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 10px 0 24px;
+  justify-content: center;
+}
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+/* 상품 카드 */
+.item {
+  border: none;
+  border-radius: 16px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1.6;
+  min-width: 240px;
+  background: #ffe9e9;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  transition: transform .2s ease;
+}
+.item:active { transform: scale(.98); }
+
+.item img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+
+/* 색상 변형 */
+.item.caramel, .item.ghost { background:#fff2db; }
+.item.picnic, .item.kindergarten, .item.lunch { background:#d3eaff; }
+
+/* 결제 영역 */
+#cart { text-align:center; }
+h3, p { text-align:center; }
+
+.btn-group { text-align:center; margin: 12px 0; }
+.btn {
+  padding: 8px 16px;
+  font-size: 16px;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.btn.gray { background:#cdcdcd; }
+.btn.pink { background:#ff9d9d; }
